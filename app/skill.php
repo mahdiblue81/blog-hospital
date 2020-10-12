@@ -13,5 +13,5 @@ class skill extends Model
     public function setTitleattribute($value)
     {
         $this->attributes['title'] = strtoupper($value);
-    } 
+    }
 }
