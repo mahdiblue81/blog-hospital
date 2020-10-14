@@ -34,7 +34,7 @@ class ManagerController extends Controller implements ManagerInterface
     public function listRequest()
     {
         $user = User::isMember(1)->get();
-        return view('manager.requestList', compact('user'));
+        return view('manager.reuestList', compact('user'));
     }
 
     public function madrakDocter($dir)
