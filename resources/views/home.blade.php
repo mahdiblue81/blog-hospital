@@ -1,5 +1,15 @@
 @extends('layouts.app')
 @section('content')
+<style>
+#img {
+    width: 100%;
+    height: 100%;
+
+}
+</style>
+
+
+
     <nav role="navigation">
         <div id="menuToggle">
             <input type="checkbox" />
@@ -18,6 +28,11 @@
                 @endcan
 
                 @can('manager-user')
+                <body style="background-image: url(12.jpg);no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;">
                     <a href="{{ route('manager.listDoctors') }}">
                         <li> لیست کاربران </li>
                     </a>
@@ -38,6 +53,11 @@
                     </a>
                 @endcan
                 @can('doctor-user')
+                <body class="img" style=" background-image: url(docter.jpg);no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;">
                     <a href="#">
                         @can('doctorCompelet')
                             <a href="{{ route('doctor.compelet') }}">
@@ -109,7 +129,11 @@
 
 
 
-
+            <body style="background-image: url(2.jpg);no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;">
                 <a href="{{ route('patient.doctorslist') }}">
                     <li>لیست پزشکان</li>
                 </a>
@@ -182,5 +206,7 @@
         </ul>
 
     @endif
-</body>
+
 @endsection
+
+

@@ -29,5 +29,6 @@ class AcceptListener
         $event->user->update([
             'is_active' => 1,
         ]);
+
     }
 }

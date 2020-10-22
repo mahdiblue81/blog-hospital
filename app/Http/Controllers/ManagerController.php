@@ -93,17 +93,17 @@ class ManagerController extends Controller implements ManagerInterface
     {
         // $manager = new Manager();
         // return $manager->docterAccept($id);
-
         //* event */***************************** */
 
-        // $user = User::find($id);
-        // event(new AcceptEvent($user));ریر
-        // return redirect()->back()->with('success', ' پزشک تایید شد');
-        // return back();
+        $user = User::find($id);
+        event(new AcceptEvent($user));
+        $user->roles()->attach(1);
+        return redirect()->back()->with('success', ' پزشک تایید شد');
+        return back();
 
         //abstract *****************************
-        $accept = resolve('DocterAccept', [$id]);
-        return $accept->docterAcceptOrReject();
+        // $accept = resolve('DocterAccept', [$id]);
+        // return $accept->docterAcceptOrReject();
     }
 
     public function docterReject($id)
