@@ -44,7 +44,7 @@ class DoctorController extends Controller
     public function compelet()
     {
 
-     
+
         $madrak = madrak::all();
         $skill = skill::all();
         return view('doctor.compelet', compact('madrak', 'skill'));
@@ -76,10 +76,10 @@ class DoctorController extends Controller
         $doctor->submit = 1;
         $user = User::find(Auth::user()->id);
         $user->docters()->save($doctor);
-        $name = $doctor->id . '.' . $request->file('pic')->getClientOriginalExtension();
-        $file = $request->file('pic')->move(public_path('files_upload'), $name);
-        $fileUpload = $doctor->path_file = $name;
-        // processMadrak::dispatchNow($fileUpload);
+        // $name = $doctor->id . '.' . $request->file('pic')->getClientOriginalExtension();
+        // $file = $request->file('pic')->move(public_path('files_upload'), $name);
+        // $fileUpload = $doctor->path_file = $name;
+        // // processMadrak::dispatchNow($fileUpload);
         $doctor->save();
         return redirect('home')->with('success', 'پروفایل شما کامل شد ');
     }
