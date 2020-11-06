@@ -14,7 +14,7 @@ class DocterPolicy
     /**
      * Create a new policy instance.
      *
-     * @return void
+     * @return voida
      */
     public function doctersAuth(User $user, Docter $docter)
     {
